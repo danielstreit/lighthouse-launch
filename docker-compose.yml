@@ -15,6 +15,7 @@ services:
       --enr-udp-port $ENR_UDP_PORT
       --debug-level $LOG_LEVEL
     network_mode: host
+    restart: always
     volumes:
       - ./config:/root/sbc/config
       - ./node_db:/home/.eth2/beaconchaindata
@@ -96,6 +97,7 @@ services:
       --beacon-nodes http://localhost:5052
       --graffiti-file /root/sbc/config/graffiti_file.txt
     network_mode: host
+    restart: always
     volumes:
       - ./config:/root/sbc/config
       - ./validators:/root/sbc/validators
